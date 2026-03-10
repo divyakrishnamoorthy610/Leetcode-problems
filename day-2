@@ -1,0 +1,48 @@
+// problem 1
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length()!=t.length())
+        return false;
+        char[] sarr=s.toCharArray();
+        char[] tarr=t.toCharArray();
+        Arrays.sort(sarr);
+        Arrays.sort(tarr);
+        return Arrays.equals(sarr,tarr);
+        }
+        
+    }
+
+
+//problem 2
+class Solution {
+    public int[] replaceElements(int[] arr) {
+        int max = -1;
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            int current = arr[i];
+            arr[i] = max;
+            if (current > max) {
+                max = current;
+            }
+        }
+
+        return arr;
+    }
+}
+
+//problem 3
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        int i = 0; 
+        int j = 0;
+
+        while (i < s.length() && j < t.length()) {
+            if (s.charAt(i) == t.charAt(j)) {
+                i++; 
+            }
+            j++;
+        }
+
+        return i == s.length();
+    }
+}
